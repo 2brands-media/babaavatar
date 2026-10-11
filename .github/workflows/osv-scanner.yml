@@ -1,0 +1,22 @@
+name: Offline-Abhängigkeitssicherheit
+on:
+  push:
+    branches: [main, 'codex/**', 'feat/**']
+  pull_request:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  scan:
+    runs-on: [self-hosted, buildserver]
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - run: bash scripts/security-offline.sh

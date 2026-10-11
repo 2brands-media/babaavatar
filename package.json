@@ -1,7 +1,7 @@
 {
   "name": "babaavatar",
   "version": "0.7.8",
-  "description": "BabaAvatar — VTuber-Anwendung: Webcam-Tracking (Gesicht, Oberkörper, Hände) auf VRM-Avatare, für OBS-Streaming via Window Capture mit Chroma-Key.",
+  "description": "BabaAvatar \u2014 VTuber-Anwendung: Webcam-Tracking (Gesicht, Oberk\u00f6rper, H\u00e4nde) auf VRM-Avatare, f\u00fcr OBS-Streaming via Window Capture mit Chroma-Key.",
   "main": "out/main/index.js",
   "author": "2Brands Media GmbH <info@2brandsmedia.com>",
   "license": "UNLICENSED",
@@ -15,13 +15,14 @@
     "preview": "electron-vite preview",
     "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
     "lint": "ESLINT_USE_FLAT_CONFIG=false eslint . --ext .ts,.tsx --max-warnings 0",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+    "test": "node --test scripts/test-dependency-tools.cjs"
   },
   "dependencies": {
     "@mediapipe/tasks-vision": "^0.10.18",
     "@pixiv/three-vrm": "^3.4.0",
     "electron-store": "^10.0.0",
-    "electron-updater": "^6.8.3",
+    "electron-updater": "^6.8.9",
     "kalidokit": "^1.1.5",
     "meyda": "^5.6.3",
     "osc": "^2.4.5",
@@ -39,15 +40,34 @@
     "@types/three": "^0.169.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
-    "@vitejs/plugin-react": "^4.3.0",
-    "electron": "^33.0.0",
-    "electron-builder": "^25.0.0",
-    "electron-vite": "^2.3.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "electron": "41.10.6",
+    "electron-builder": "26.17.0",
+    "electron-vite": "^4.0.1",
     "eslint": "^9.10.0",
     "eslint-plugin-react": "^7.36.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "prettier": "^3.3.0",
     "typescript": "^5.6.0",
-    "vite": "^5.4.0"
+    "vite": "^6.4.3",
+    "electron-builder-squirrel-windows": "26.15.3"
+  },
+  "overrides": {
+    "tar": "^7.5.19",
+    "brace-expansion@1": "^1.1.21",
+    "brace-expansion@2": "^2.1.7",
+    "brace-expansion@5": "^5.0.12",
+    "ip-address": "^10.7.1",
+    "fast-uri@3": "^3.1.8",
+    "app-builder-lib": {
+      "@electron/get": "5.1.0"
+    },
+    "shell-quote": "^1.11.0",
+    "source-map-js": "^1.2.2",
+    "postcss": "^8.5.28",
+    "builder-util-runtime": "^9.7.0",
+    "browserslist": "^4.28.7",
+    "js-yaml@4": "^4.3.2",
+    "ws@8": "^8.21.0"
   }
 }
